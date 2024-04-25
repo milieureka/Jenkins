@@ -32,7 +32,7 @@ pipeline {
         }
         stage('Approval') {
             steps {
-                sleep(secs: 10, unit: 'SECONDS')
+                sleep(time: 10, unit: 'SECONDS')
             }
         }
         stage('Deploy to Production') {
