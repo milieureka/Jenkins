@@ -30,7 +30,7 @@ pipeline {
                 echo 'deploy the application to a testing environment specified by the environment variable'
             }
         }
-        stages('Approval') {
+        stage('Approval') {
             steps {
                 sleep(secs: 10, unit: 'SECONDS')
             }
