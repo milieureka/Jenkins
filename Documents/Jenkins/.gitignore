@@ -1,0 +1,29 @@
+# Ignore macOS system files
+.DS_Store
+
+# Ignore all log files
+*.log
+
+# Ignore node modules
+node_modules/
+
+# Ignore Python virtual environments
+venv/
+.env/
+
+# Ignore IDE and editor directories
+.vscode/
+.idea/
+
+# Ignore build output directories
+build/
+dist/
+
+# Specific files
+config/settings.json
+
+# Ignore specific directories that are not part of the project
+Trash/
+Downloads/
+Desktop/
+
