@@ -1,0 +1,66 @@
+pipeline {
+    agent = any 
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building the project using Maven.'
+            }
+        }
+        stage('Unit and Integration Tests') {
+            steps {
+                echo 'Running unit tests and integration tests using JUnit and TestNG.'
+            }
+            post{
+                success {
+                    mail to: "s222081757@deakin.edu.au",
+                    subject: "Test stage passed successfully",
+                    body: "Test stage passed successfully."
+                }
+                failure {
+                    mail to: "s222081757@deakin.edu.au",
+                    subject: "Test stage failed",
+                    body: "Test stage failed. Please check the attached logs for details.",
+                    attachLog: true
+                }
+            }
+        }
+        stage('Code Analysis') {
+            steps {
+                echo 'Analyzing code with SonarQube.'
+            }
+        }
+        stage('Security Scan') {
+            steps {
+                echo 'Performing security scan using OWASP ZAP.'
+            }
+            post {
+                success {
+                    mail to: "s222081757@deakin.edu.au",
+                    subject: "Security Scan stage passed successfully",
+                    body: "Security Scan stage passed successfully."
+                }
+                failure {
+                    mail to: "s222081757@deakin.edu.au",
+                    subject: "Security Scan stage failed",
+                    body: "Security Scan stage failed. Please check the attached logs for details.",
+                    attachLog: true
+                }
+            }
+        }
+        stage('Deploy to staging') {
+            steps {
+                echo 'Deploy using Jenkins scripts.'
+            }
+        }
+        stage('Interactive on Staging') {
+            steps {
+                echo 'Performing interactive testing using Selenium.'
+            }
+        }
+        stage('Deploy to production') {
+            steps {
+                echo 'Deploy using Jenkins scripts.'
+            }
+        }
+    }
+}
