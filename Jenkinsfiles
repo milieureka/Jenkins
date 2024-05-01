@@ -16,13 +16,13 @@ pipeline{
                     emailext(to: "mili.eureka@gmail.com",
                     subject: "Test Success",
                     body: "The test is successful",
-                    attachlog: true)
+                    attachLog: true)
                 }
                 failure {
                     emailext(to: "mili.eureka@gmail.com",
                     subject: "Test Failure",
                     body: "The test is failed",
-                    attachlog: true)
+                    attachLog: true)
                 }
             }
         }
@@ -40,13 +40,13 @@ pipeline{
                     emailext(to: "mili.eureka@gmail.com",
                     subject: "Test Success",
                     body: "The test is successful",
-                    attachlog: true)
+                    attachLog: true)
                 }
                 failure {
                     emailext(to: "mili.eureka@gmail.com",
                     subject: "Test Failure",
                     body: "The test is failed",
-                    attachlog: true)
+                    attachLog: true)
                 }
             }
         }
@@ -59,13 +59,13 @@ pipeline{
                     emailext(to: "mili.eureka@gmail.com",
                     subject: "Test Success",
                     body: "The test is successful",
-                    attachlog: true)
+                    attachLog: true)
                 }
                 failure {
                     emailext(to: "mili.eureka@gmail.com",
                     subject: "Test Failure",
                     body: "The test is failed",
-                    attachlog: true)
+                    attachLog: true)
                 }
             }
         }
