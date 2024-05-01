@@ -19,7 +19,7 @@ pipeline{
                     attachlog: true)
                 }
                 failure {
-                    emailext(to: ""mili.eureka@gmail.com",
+                    emailext(to: "mili.eureka@gmail.com",
                     subject: "Test Failure",
                     body: "The test is failed",
                     attachlog: true)
@@ -43,7 +43,7 @@ pipeline{
                     attachlog: true)
                 }
                 failure {
-                    emailext(to: ""mili.eureka@gmail.com",
+                    emailext(to: "mili.eureka@gmail.com",
                     subject: "Test Failure",
                     body: "The test is failed",
                     attachlog: true)
@@ -62,7 +62,7 @@ pipeline{
                     attachlog: true)
                 }
                 failure {
-                    emailext(to: ""mili.eureka@gmail.com",
+                    emailext(to: "mili.eureka@gmail.com",
                     subject: "Test Failure",
                     body: "The test is failed",
                     attachlog: true)
