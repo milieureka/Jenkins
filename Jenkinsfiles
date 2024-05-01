@@ -1,0 +1,84 @@
+pipeline{
+    agent any
+
+    stage{
+        stage('Build') {
+            steps {
+                echo 'Building with Maven'
+            }
+        }
+        stage('Unit and Integration Tests') {
+            step{
+                echo 'JUnit and Selenium for testing'
+            }
+            post{
+                success {
+                    emailext(to: "mili.eureka@gmail.com",
+                    subject: "Test Success",
+                    body: "The test is successful"
+                    attachlog: true
+                    )
+                }
+                failure {
+                    emailext(to: ""mili.eureka@gmail.com",
+                    subject: "Test Failure",
+                    body: "The test is failed"
+                    attachlog: true
+                    )
+                }
+            }
+        }
+        stage('Code Analysis') {
+            steps{
+                echo 'Code Analysis with SonarQube'
+            }
+        }
+        stage('Security Scan') {
+            steps{
+                echo 'Security Scan with Fortify'
+            }
+            post{
+                success {
+                    emailext(to: "mili.eureka@gmail.com",
+                    subject: "Test Success",
+                    body: "The test is successful"
+                    attachlog: true
+                    )
+                }
+                failure {
+                    emailext(to: ""mili.eureka@gmail.com",
+                    subject: "Test Failure",
+                    body: "The test is failed"
+                    attachlog: true
+                    )
+                }
+            }
+        }
+        stage('Integration Tests on Staging') {
+            steps{
+                echo 'Jenkins script to Integration Tests on Staging'
+            }
+            post{
+                success {
+                    emailext(to: "mili.eureka@gmail.com",
+                    subject: "Test Success",
+                    body: "The test is successful"
+                    attachlog: true
+                    )
+                }
+                failure {
+                    emailext(to: ""mili.eureka@gmail.com",
+                    subject: "Test Failure",
+                    body: "The test is failed"
+                    attachlog: true
+                    )
+                }
+            }
+        }
+        stage('Deploy to Production') {
+            steps{
+                echo 'Jenkins script to Deploy to Production'
+            }
+        }
+    }
+}
